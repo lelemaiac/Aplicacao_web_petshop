@@ -1,0 +1,43 @@
+{% extends 'pagina_inicial.html' %}
+
+{% block conteudo %}
+
+{%- for mensagem in get_flashed_messages() %}
+    <div class="msg">
+        {{mensagem}}
+    </div>
+{%- endfor %}
+
+<div class="geral">
+    <!--Chama a função-->
+    <form action="{{url_for('criar_animal')}}" method="POST">
+
+        <div class="anim">
+            <label for="nome">Nome: </label>
+            <input id="nome" type="text" name="form_nome">
+        </div>
+
+        <div class="anim">
+            <label for="ano_nascimento">Ano de nascimento: </label>
+            <input id="ano_nascimento" type="number" name="form_ano_nascimento">
+        </div>
+
+        <div class="anim">
+            <label for="raca">Raça: </label>
+            <input id="raca" type="text" name="form_raca">
+        </div>
+
+        <div class="anim">
+            <label for="id">Id do cliente: </label>
+            <input id="id" type="number" name="form_id_cliente">
+        </div>
+
+
+        <button>Adicionar</button>
+
+    </form>
+
+    <button><a href="{{url_for('animais')}}">Cancelar</a></button>
+
+</div>
+{% endblock conteudo %}

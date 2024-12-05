@@ -1,0 +1,9 @@
+{% extends 'pagina_inicial.html' %}
+{% block conteudo %}
+    {% for item in categorias_banco%}
+        <div class="categorias">
+            Nome:{{item.nome_categoria}}
+        </div>
+
+    {% endfor %}
+{% endblock conteudo %}

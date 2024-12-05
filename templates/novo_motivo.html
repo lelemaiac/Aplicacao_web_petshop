@@ -1,0 +1,41 @@
+{% extends 'pagina_inicial.html' %}
+
+{% block conteudo %}
+
+{%- for mensagem in get_flashed_messages() %}
+    <div class="msg">
+        {{mensagem}}
+    </div>
+{%- endfor %}
+
+<div class="geral">
+    <!--Chama a função-->
+    <form action="{{url_for('criar_motivo')}}" method="POST">
+
+        <div class="moti">
+             <label for="nome">Nome: </label>
+            <input id="nome" type="text" name="form_nome">
+        </div>
+
+        <div class="moti">
+            <label for="categoria">Categoria: </label>
+            <input id="categoria" type="text" name="form_categoria">
+        </div>
+
+        <div class="moti">
+            <label for="valor">Valor: </label>
+            <input id="valor" type="number" name="form_valor">
+        </div>
+
+
+        <button>Adicionar</button>
+    </form>
+
+    <button><a href="{{url_for('motivos')}}">Cancelar</a></button>
+
+</div>
+{% endblock conteudo %}
+
+
+
+

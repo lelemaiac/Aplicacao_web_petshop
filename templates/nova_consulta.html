@@ -1,0 +1,53 @@
+{% extends 'pagina_inicial.html' %}
+
+{% block conteudo %}
+
+{%- for mensagem in get_flashed_messages() %}
+    <div class="msg">
+        {{mensagem}}
+    </div>
+{%- endfor %}
+
+
+<div class="geral">
+<!--Chama a função-->
+    <form action="{{url_for('criar_consulta')}}" method="POST">
+
+        <div class="con">
+            <label>Hora:</label>
+            <input type="text" name="form_horario">
+        </div>
+
+        <div class="con">
+            <label>Minuto:</label>
+            <input type="number" name="form_minuto">
+        </div>
+
+        <div class="con">
+            <label>Motivo:</label>
+            <input type="text" name="form_motivo">
+        </div>
+
+        <div class="con">
+            <label>Id do animal:</label>
+            <input type="number" name="form_animal_id">
+        </div>
+
+        <div class="con">
+            <label>Id do veterinário:</label>
+            <input type="number" name="form_veterinario_id">
+        </div>
+
+        <div class="con">
+            <label>Dia:</label>
+            <input type="text" name="form_dia">
+        </div>
+
+
+        <button>Adicionar</button>
+
+
+    </form>
+    <button><a href="{{url_for('consultas')}}">Cancelar</a></button>
+</div>
+{% endblock conteudo %}

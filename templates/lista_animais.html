@@ -1,0 +1,12 @@
+{% extends 'pagina_inicial.html' %}
+{% block conteudo %}
+    {% for item in animais_banco%}
+        <div class="animais">
+            Nome:{{item.nome_animal}}<br>
+            Ano de nascimento:{{item.anoNasci3}}<br>
+            Raça:{{item.raca3}}<br>
+            Id do Cliente:{{item.cliente_id}}
+        </div>
+
+    {% endfor %}
+{% endblock conteudo %}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/pagina_inicial.css">
+    <link rel="stylesheet" href="/static/decoracao.css"
+</head>
+<body>
+
+<header>
+    <h1>Dogs e Dogs</h1>
+</header>
+
+<nav>
+
+    <a href="{{url_for('criar_animal')}}">Cadastro de animais</a><br>
+
+    <a href="{{url_for('criar_motivo')}}">Cadastro de motivo</a><br>
+
+    <a href="{{url_for('criar_consulta')}}">Cadastro de consultas</a><br>
+
+    <a href="{{url_for('criar_categoria')}}">Cadastro de categoria</a><br>
+
+    <a href="{{url_for('consultas')}}">Lista Consultas</a><br>
+
+    <a href="{{url_for('animais')}}">Lista Animais</a><br>
+
+    <a href="{{url_for('motivos')}}">Lista Motivo</a><br>
+
+    <a href="{{url_for('categorias')}}">Lista Categoria</a><br>
+
+
+</nav>
+
+<main>
+    {% block conteudo %}
+    {% endblock conteudo %}
+</main>
+
+
+</body>
+</html>

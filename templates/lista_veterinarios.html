@@ -1,0 +1,15 @@
+{% extends 'pagina_inicial' %}
+{% block conteudo %}
+    {% for item in veterinarios_banco%}
+        <div class="veterinarios">
+            Nome:{{item.nome}}
+            CPF:{{item.cpf}}
+            CRMV:{{item.CRMV}}
+            Data de emissão:{{item.data_de_emissao}}
+            Telefone:{{item.telefone}}
+            Endereço:{{item.endereco}}
+            Salário:{{item.salario}}
+        </div>
+
+    {% endfor %}
+{% endblock conteudo %}

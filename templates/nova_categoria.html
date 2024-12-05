@@ -1,0 +1,27 @@
+{% extends 'pagina_inicial.html' %}
+
+{% block conteudo %}
+
+{%- for mensagem in get_flashed_messages() %}
+    <div class="msg">
+        {{mensagem}}
+    </div>
+{%- endfor %}
+
+<div class="geral">
+<!--Chama a função-->
+    <form action="{{url_for('criar_categoria')}}" method="POST">
+
+        <div class="cat">
+            <label>Nome da categoria:</label>
+            <input type="text" name="form_nome">
+        </div>
+
+
+        <button>Adicionar</button>
+
+    </form>
+    <button><a href="{{url_for('categorias')}}">Cancelar</a></button>
+
+</div>
+{% endblock conteudo %}

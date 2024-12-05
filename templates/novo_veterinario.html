@@ -1,0 +1,28 @@
+{% extends 'pagina_inicial.html' %}
+
+{% block conteudo %}
+
+<div class="geral">
+    <!--Chama a função-->
+    <form action="{{url_for('criar_veterinario')}}" method="POST">
+        <label>Nome Completo</label>
+        <input type="text" name="form_nome">
+        <label>CRMV</label>
+        <input type="number" name="form_crmv">
+        <label>Data de emissão</label>
+        <input type="text" name="form_data_emissao">
+        <label>Telefone</label>
+        <input type="number" name="form_telefone">
+        <label>Endereço</label>
+        <input type="text" name="form_endereco">
+        <label>Salário</label>
+        <input type="number" name="form_salario">
+        <label>CPF</label>
+        <input type="text" name="form_cpf">
+
+        <button>Adicionar</button>
+
+    </form>
+    <button><a href="{{url_for('veterinarios')}}">Cancelar</a></button>
+</div>
+{% endblock conteudo %}

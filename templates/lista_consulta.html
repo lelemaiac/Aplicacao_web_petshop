@@ -1,0 +1,14 @@
+{% extends 'pagina_inicial.html' %}
+{% block conteudo %}
+    {% for item in consultas_banco%}
+        <div class="consultas">
+            Dia:{{item.data1}}<br>
+            Hora:{{item.hora1}}<br>
+            Minuto:{{item.minuto}}<br>
+            Id do Motivo:{{item.motivo_id1}}<br>
+            Id do Animal:{{item.idAnimal1}}<br>
+            Id do Veterinário:{{item.idVeterinario1}}<br>
+        </div>
+
+    {% endfor %}
+{% endblock conteudo %}
