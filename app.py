@@ -155,10 +155,9 @@ def animais():
 def criar_animal():
     if request.method == "POST":
 
-        if not request.form['form_nome'] or not request.form['form_ano_nascimento'] or not request.form[
-            'form_raca'] or not request.form['form_id_cliente']:
+        if (not request.form['form_nome'] or not request.form['form_ano_nascimento']
+                or not request.form['form_raca'] or not request.form['form_id_cliente']):
             flash("Preencher os campos em branco", "error")
-
         else:
             form_criar = Animal(nome_animal=request.form.get('form_nome'),
                                 anoNasci3=int(request.form['form_ano_nascimento']),
